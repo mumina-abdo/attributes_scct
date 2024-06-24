@@ -1,5 +1,7 @@
 from django.db import models
 
+from student.models import Student
+
 # Create your models here.
 class course(models.Model):
     course_name = models.CharField(max_length =20)
@@ -8,7 +10,7 @@ class course(models.Model):
     course_credit= models.PositiveSmallIntegerField()
     course_start_date = models.CharField(max_length =20)
     course_end_date= models.CharField(max_length =20)
-    course_location=models.CharField(max_length =20)
+    course_category=models.CharField(max_length =20)
     course_teacher=models.CharField(max_length =20)
     course_capacity=models.PositiveSmallIntegerField()
     
