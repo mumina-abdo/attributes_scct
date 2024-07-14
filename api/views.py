@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 
 from student.models import Student
 
-from .serialize import StudentSerializer
+from .serializers import StudentSerializer
 
 from rest_framework.response import Response
 
