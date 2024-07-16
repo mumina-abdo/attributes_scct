@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from course.models import Courses
+from classperiod.models import ClassPeriod
 
-class CourseSerializer(serializers.ModelSerializer):
+class ClassPeriodSerializer(serializers.ModelSerializer):
     class meta:
-        model = Courses
-        fields = "--all--"
+        model = ClassPeriod
+        fields = "__all__"

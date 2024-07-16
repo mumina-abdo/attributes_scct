@@ -5,8 +5,8 @@ from django.db import models
 
 # Create your models here.
 
-class Classroom(models.Model):
-    class_name = models.CharField(max_length =20)
+class Class(models.Model):
+    class_name = models.CharField(max_length =20, default='default_phone_number')  
     class_start_date = models.CharField(max_length =20)
     class_end_date= models.CharField(max_length =20)
     class_capacity= models.PositiveSmallIntegerField()
