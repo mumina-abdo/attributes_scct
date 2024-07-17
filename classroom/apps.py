@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class Api3Config(AppConfig):
+class ClassConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'api3'
+    name = 'classroom'

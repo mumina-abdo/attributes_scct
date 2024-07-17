@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models.manager import BaseManager
 
 # Create your models here.
 
@@ -14,6 +14,8 @@ class Teacher(models.Model):
     account_number=models.CharField(max_length = 20)
     date_of_joining = models.DateField()
     gender=models.CharField(max_length = 20)
+    
+    objects : BaseManager["Teacher"]
     
     
 def __str__(self):

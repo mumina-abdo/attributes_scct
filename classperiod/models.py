@@ -1,5 +1,7 @@
 from django.db import models
-from course.models import Course
+from django.db.models.manager import BaseManager
+
+
 # Create your models here.
 
 class ClassPeriod(models.Model):
@@ -8,6 +10,8 @@ class ClassPeriod(models.Model):
     course = models.CharField(max_length=10)
     classroom = models.CharField(max_length=10)
     day_of_week = models.CharField(max_length=10)
+    
+    objects : BaseManager["ClassPeriod"]
     
     def __str__(self):
         return self.classroom

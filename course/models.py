@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.manager import BaseManager
+
 
 
 
@@ -13,6 +15,8 @@ class Course(models.Model):
     course_category=models.CharField(max_length =20)
     course_teacher=models.CharField(max_length =20)
     course_capacity=models.PositiveSmallIntegerField()
+    
+objects : BaseManager ["Course"]
     
     
 def __str__(self):

@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.manager import BaseManager
+
 
 # Create your models here.
 
@@ -14,7 +16,7 @@ class Student(models.Model):
     parent_name=models.CharField(max_length =20,  default='default_parent_name')
     parent_phone_number=models.CharField(max_length =20, default='default_pparent_hone_number')
     
-
+objects : BaseManager ["Student"]
     
     
     
