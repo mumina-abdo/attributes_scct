@@ -29,6 +29,12 @@ from .serializers import TeacherSerializer
 class StudentListView(APIView):
     def get(self, request ):
         students = Student.objects.all()
+        first_name = request.query_params.get("first_name")
+        if first_name:
+            students = students.filter(first_name=first_name)
+        country = request.query_params.get("country")
+        if country:
+            students = students.filter(country=country)    
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
     
@@ -48,6 +54,21 @@ class StudentDetailView(APIView):
         serializer = StudentSerializer(student)
         return Response(serializer.data)
     
+    
+
+    
+    def enroll_student(add, student, course_id):
+        Course = Course.objects.get(id = course_id)
+        student.courses.add(Course)
+        
+        
+    def post(self, request, id):
+        Student = Student.objects.get(id=id)
+        action = request.data.get("action")
+        if action == "enroll":
+           Course_id =request.data.get("course")
+           self.enroll_student(student = course_id)
+             
     
     def put(self, request, id):
         student = Student.objects.get(id = id)
